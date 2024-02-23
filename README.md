@@ -22,6 +22,12 @@ The data was retrieved from government of Canada's open database.
 
 - Civil court cases, by level of court and type of case, Canada and selected provinces and territories - Dataset (https://open.canada.ca/data/en/dataset/5641ad22-190a-4486-8c5d-3884328a51a5/resource/108a7554-fe40-4fba-951a-d06debb76bca)
 
+## Project Member
+
+This is a solo project by: 
+
+- Behnoosh Nasri 
+
 ## Analysis
 
 TBD
