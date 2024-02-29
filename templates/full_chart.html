@@ -8,11 +8,19 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.plot.ly/plotly-2.29.1.min.js" charset="utf-8"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-    <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/charts.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/charts.css') }}">
 </head>
 <body>
     <h1>Full Data Visualization</h1>
+    <div class="container">
+        <!-- Dropdown for selecting the year -->
+        <label for="yearSelect">Select Year:</label>
+        <select id="yearSelect" class="form-control">
+            <!-- Options will be populated dynamically using JavaScript -->
+        </select>
+    </div>
+    <div id="plot"></div>
+    <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
     <canvas id="fullChart"></canvas>
     <script>
         // Call the function to generate jurisdiction chart when the page loads

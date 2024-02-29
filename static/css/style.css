@@ -5,13 +5,13 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0ebf3;
+    background-color: #fff;
     text-align: center;
 }
 
 /* Header */
 header {
-    background-color: #333;
+    background-color: #2bbe75;
     color: #fff;
     padding: 20px;
     text-align: center;
