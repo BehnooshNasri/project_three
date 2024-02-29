@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Court Cases by Case Type Through the Years</title>
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Include custom JavaScript file -->
+    <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/charts.css') }}">
+</head>
+<body>
+    <h1>Court Cases by Case Type Through the Years</h1>
+    <canvas id="caseTypeChart"></canvas>
+    <script>
+        // Call the function to generate jurisdiction chart when the page loads
+        generateCaseTypeChart();
+    </script>
+</body>
+</html>

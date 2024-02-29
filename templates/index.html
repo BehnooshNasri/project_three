@@ -4,14 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Civil Case Data</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-    <link type="stylesheet" href=" {{ url_for('static', filename='csss/style.css') }}">
+    <title>Welcome to Civil Case Data Main Page!</title>
+    <!-- Add any additional meta tags or external scripts you need -->
+
+    <!-- Add custom CSS styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <div id="plot"></div>
-    <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
-    <!-- <script src="../static/js/plots.js"> </script> -->
+    <header>
+        <h1>Welcome to Civil Case Data Main Page!</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="/api/v1.0/civil_court_data">Civil Court Data API</a></li>
+            <li><a href="/jurisdiction_chart">Data by Jurisdiction </a></li>
+            <li><a href="/case_type_chart">Data by Case Type</a></li>
+            <li><a href="/full_chart">Full Data</a></li>
+        </ul>
+    </nav>
+
+    <!-- Add any additional content or scripts you need -->
+
+         <!-- Add the image -->
+         <div class="image-container">
+            <img src="{{ url_for('static', filename='images/image.jpg') }}" alt="Scales Image">
+        </div>
+
+
 </body>
 </html>

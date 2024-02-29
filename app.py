@@ -36,6 +36,18 @@ def civil_court_data():
 def main(): 
     return render_template("index.html")
 
+@app.route('/jurisdiction_chart')
+def jurisdiction_chart():
+    return render_template("jurisdiction_chart.html")
+
+@app.route('/case_type_chart')
+def case_type_chart():
+    return render_template("case_type_chart.html")
+
+@app.route('/full_chart')
+def full_chart():
+    return render_template("full_chart.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
 
