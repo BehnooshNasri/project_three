@@ -5,26 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Full Data Visualization</title>
     
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- External JavaScript libraries -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.plot.ly/plotly-2.29.1.min.js" charset="utf-8"></script>
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/charts.css') }}">
+
+    <!-- Custom JavaScript -->
+    <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/charts.css') }}">
 </head>
 <body>
-    <h1>Full Data Visualization</h1>
     <div class="container">
+        <h1 class="text-center">Full Data Visualization</h1>
+
         <!-- Dropdown for selecting the year -->
-        <label for="yearSelect">Select Year:</label>
-        <select id="yearSelect" class="form-control">
-            <!-- Options will be populated dynamically using JavaScript -->
-        </select>
-    </div>
-    <div id="plot"></div>
-    <script src="{{ url_for('static', filename='js/plots.js') }}"></script>
-    <canvas id="fullChart"></canvas>
+        <div class="form-group">
+            <label for="yearSelect">Select Year:</label>
+            <select id="yearSelect" class="form-control">
+                <!-- Options will be populated dynamically using JavaScript -->
+            </select>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <!-- Place for Jurisdiction chart -->
+                <div class="col-md-4">
+                    <h2>Jurisdiction Chart</h2>
+                    <div id="jurisdictionChart"></div>
+                </div>
+                <!-- Place for Case Type chart -->
+                <div class="col-md-4">
+                    <h2>Case Type Chart</h2>
+                    <div id="caseTypeChart"></div>
+                </div>
+            </div>
+            <div class="row">
+                <!-- Place for Pie Chart for Jurisdictions -->
+                <div class="col-md-12">
+                    <h2>Jurisdictions Pie Chart</h2>
+                    <div id="jurisdictionsPieChart"></div>
+                </div>
+            </div>
+        </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <script>
         // Call the function to generate jurisdiction chart when the page loads
         generateFullChart();
     </script>
 </body>
 </html>
+
+
