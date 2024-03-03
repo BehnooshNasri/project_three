@@ -1,7 +1,8 @@
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, request
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.ext.automap import automap_base
+
 
 app = Flask(__name__)
 
@@ -16,8 +17,14 @@ Civil = Base.classes.civil_case_data
 @app.route("/api/v1.0/civil_court_data")
 def civil_court_data():
     session = Session(engine)
-    results = session.query(Civil).all()
-    session.close()
+
+    year = request.args.get('year')
+
+    if year: 
+        results = session.query(Civil).filter_by(Year_Period=year).all()
+    else: 
+        results = session.query(Civil).all()
+    # session.close()
     
     # Convert results to dictionary for JSON serialization
     civil_data = []
