@@ -3,28 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jurisdiction Data Visualization</title>
-   
-    <script src="https://cdn.plot.ly/plotly-2.29.1.min.js" charset="utf-8"></script>
+    <title>Court Cases by Jurisdiction Through the Years</title>
+    <!-- Load d3 -->
     <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <!-- Load Plotly.js -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/charts.css') }}">
+
 </head>
 <body>
-    <h1>Court Cases by Jurisdiction Through the Years</h1>
-    <div class="container">
-        <!-- Dropdown for selecting the year -->
-        <label for="yearSelect">Select Year:</label>
-        <select id="yearSelect" class="form-control">
-            <!-- Options will be populated dynamically using JavaScript -->
-        </select>
+    <div> 
+        <!-- Dropdown to select jurisdiction -->
+        <select id="placeSelect"></select>
     </div>
-    <div id="plot"></div>
+    
+    <!-- Div to hold the chart-->
+    <div id="jurisdictionChart"></div>
+
+    <!-- Custom JavaScript -->
     <script src="{{ url_for('static', filename='js/plots2.js') }}"></script>
-    <canvas id="jurisdictionChart"></canvas>
+    
     <script>
-        // Call the function to generate jurisdiction chart when the page loads
+        // Call the function to generate plotly charts when the page loads
         generateJurisdictionChart();
     </script>
+      
 </body>
 </html>

@@ -18,12 +18,24 @@ Civil = Base.classes.civil_case_data
 def civil_court_data():
     session = Session(engine)
 
+    # Get query parameters
     year = request.args.get('year')
+    place = request.args.get('place')
 
-    if year: 
-        results = session.query(Civil).filter_by(Year_Period=year).all()
-    else: 
-        results = session.query(Civil).all()
+    # Filter data based on query parameters
+    query = session.query(Civil)
+    if year:
+        query = query.filter_by(Year_Period=year)
+    if place:
+        query = query.filter_by(Jurisdiction=place)
+    
+    results = query.all()
+    # if year: 
+    #     results = session.query(Civil).filter_by(Year_Period=year).all()
+    # else: 
+    #     results = session.query(Civil).all()
+
+ 
     # session.close()
     
     # Convert results to dictionary for JSON serialization
@@ -43,17 +55,14 @@ def civil_court_data():
 def main(): 
     return render_template("index.html")
 
+@app.route('/full_chart')
+def full_chart():
+    return render_template("full_chart.html")
+
 @app.route('/jurisdiction_chart')
 def jurisdiction_chart():
     return render_template("jurisdiction_chart.html")
 
-@app.route('/case_type_chart')
-def case_type_chart():
-    return render_template("case_type_chart.html")
-
-@app.route('/full_chart')
-def full_chart():
-    return render_template("full_chart.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
