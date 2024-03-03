@@ -82,6 +82,6 @@ function generateJurisdictionChart(data, place) {
         type: 'bar',
         name: 'Number of Cases'
     }];
-    Plotly.newPlot('jurisdictionChart', jurisdictionChartData, {title: `Number of Civil Cases by Jurisdiction (${place})`});
+    Plotly.newPlot('jurisdictionChart', jurisdictionChartData, {title: `Number of Civil Cases by Jurisdiction Over the Years (${place})`});
 
 }
