@@ -30,12 +30,7 @@ def civil_court_data():
         query = query.filter_by(Jurisdiction=place)
     
     results = query.all()
-    # if year: 
-    #     results = session.query(Civil).filter_by(Year_Period=year).all()
-    # else: 
-    #     results = session.query(Civil).all()
-
- 
+  
     # session.close()
     
     # Convert results to dictionary for JSON serialization
