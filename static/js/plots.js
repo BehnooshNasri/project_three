@@ -81,7 +81,10 @@ function generateCharts(data, year) {
         x: jurisdictionLabels,
         y: jurisdictionValues,
         type: 'bar',
-        name: 'Number of Cases'
+        name: 'Number of Cases',
+        marker: {
+            color: 'rgb(0,204,0)'
+        }
     }];
     Plotly.newPlot('jurisdictionChart', jurisdictionChartData, {title: `Number of Civil Cases by Jurisdiction (${year})`});
 
@@ -90,7 +93,10 @@ function generateCharts(data, year) {
         x: caseTypeLabels,
         y: caseTypeValues,
         type: 'bar',
-        name: 'Number of Cases'
+        name: 'Number of Cases',
+        marker: {
+            color: 'rgb(255,102,102)'
+        }
     }];
     Plotly.newPlot('caseTypeChart', caseTypeChartData, {title: `Number of Civil Cases by Case Type (${year})`});
 
