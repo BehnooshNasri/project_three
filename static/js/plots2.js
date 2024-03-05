@@ -60,28 +60,58 @@ function generateJurisdictionChart(data, place) {
 
     // Group data by year and case type
     var yearData = {};
-    var caseTypeData = {};
+    var familyCaseData = {};
+    var generalCivilCaseData = {};
+    var totalCaseData = {};
+
 
     data.forEach(entry => {
-        yearData[entry.Year_Period] = (yearData[entry.Year_Period] || 0) + entry.Case_Count;
-        caseTypeData[entry.Case_Type] = (caseTypeData[entry.Case_Type] || 0) + entry.Case_Count;
+        yearData[entry.Year_Period] = entry.Year_Period;
+        if (entry.Case_Type === 'Family cases') {
+            familyCaseData[entry.Year_Period] = (familyCaseData[entry.Year_Period] || 0) + entry.Case_Count;
+        } else if (entry.Case_Type === 'General civil cases') {
+            generalCivilCaseData[entry.Year_Period] = (generalCivilCaseData[entry.Year_Period] || 0) + entry.Case_Count;
+        } else if (entry.Case_Type === 'Total cases') {
+            totalCaseData[entry.Year_Period] = (totalCaseData[entry.Year_Period] || 0) + entry.Case_Count;
+        }
     });
 
     // Get labels and data for jurisdictions pie chart
     var yearLabels = Object.keys(yearData);
-    var yearValues = Object.values(yearData);
-
-    // // Get labels and data for case type chart
-    // var caseTypeLabels = Object.keys(caseTypeData);
-    // var caseTypeValues = Object.values(caseTypeData);
+    var familyCaseValues = Object.values(familyCaseData);
+    var generalCivilCaseValues = Object.values(generalCivilCaseData);
+    var totalCaseValues = Object.values(totalCaseData);
 
     // Create Jurisdiction chart
-    var jurisdictionChartData = [{
-        x: yearLabels,
-        y: yearValues,
-        type: 'bar',
-        name: 'Number of Cases'
-    }];
-    Plotly.newPlot('jurisdictionChart', jurisdictionChartData, {title: `Number of Civil Cases by Jurisdiction Over the Years (${place})`});
+    var jurisdictionChartData = [
+        {
+            x: yearLabels,
+            y: familyCaseValues,
+            type: 'bar',
+            name: 'Family Cases',
+            marker: {
+                color: 'rgb(204,0,102)'
+            }
+        },
+        {
+            x: yearLabels,
+            y: generalCivilCaseValues,
+            type: 'bar',
+            name: 'General Civil Cases',
+            marker: {
+                color: 'rgb(0,204,102)'
+            }
+        },
+        {
+            x: yearLabels,
+            y: totalCaseValues,
+            type: 'bar',
+            name: 'Total Cases',
+            marker: {
+                color: 'rgb(127,0,255)'
+            }
+        }
+    ];
 
+    Plotly.newPlot('jurisdictionChart', jurisdictionChartData, {title: `Number of Civil Cases by Jurisdiction Over the Years (${place})`});
 }
