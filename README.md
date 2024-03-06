@@ -16,11 +16,57 @@ The questions this projects is attempting to explore and visualize are:
 
 ### ETL 
 
+The data was published by Statistic Canada in CSV format. I used Jupyter Notebook to clean up the data and imported into a postgres SQL server using pgAdmin. 
+
 ### Flask
+
+I used SQLAlchemy to create the an API that holds the data from the SQL server. Then in order to query parameters I used the following code to filter the results: 
+
+``` @app.route("/api/v1.0/civil_court_data")
+def civil_court_data():
+    session = Session(engine)
+
+    # Get query parameters
+    year = request.args.get('year')
+    place = request.args.get('place')
+
+    # Filter data based on query parameters
+    query = session.query(Civil)
+    if year:
+        query = query.filter_by(Year_Period=year)
+    if place:
+        query = query.filter_by(Jurisdiction=place)
+    
+    results = query.all()
+    ```
+
 
 ### HTML 
 
+I created three HTML files: an index HTML file for the main route, and two HTML files, one for each remaining route. 
+
+#### index.html 
+
+I used Bootstrap for styling and creating the navigation bar on the index page:
+
+```  <header class="bg-dark text-light py-4">
+        <div class="container">
+            <h1>Welcome to Civil Case Data Main Page!</h1>
+        </div>
+    </header>
+
+    <nav class="bg-light py-3 d-flex justify-content-center">
+        <ul class="nav">
+            <li class="nav-item"><a class="nav-link" href="/api/v1.0/civil_court_data">Civil Court Data API</a></li>
+            <li class="nav-item"><a class="nav-link" href="/jurisdiction_chart">Jurisdiction Data</a></li>
+            <li class="nav-item"><a class="nav-link" href="/full_chart">Full Data</a></li>
+        </ul>
+    </nav>
+    ``` 
+
 ### JavaScript
+
+
 
 ## Data and Resources
 
