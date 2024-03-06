@@ -119,15 +119,15 @@ For the jurisdiction visualization a bar chart is created to show each jurisdict
 
 Data by jurisdcition for 2021/2022 (bar chart):
 
-![Alt text](static\images\civil-cases-by-year-2021-2022-jurisdiction.png)
+![Alt text](static/images/civil-cases-by-year-2021-2022-jurisdiction.png)
 
 Data by case type for 2021/2022 (bar chart):
 
-![Alt text](static\images\civil-cases-by-year-2021-2022-case-type.png)
+![Alt text](static/images/civil-cases-by-year-2021-2022-case-type.png)
 
 Data by jurisdcition for 2021/2022 (pie chart):
 
-![Alt text](static\images\civil-cases-by-year-2021-2022-pie.png)
+![Alt text](static/images/civil-cases-by-year-2021-2022-pie.png)
 
 2. What type of civil court cases (family or general civil) are more frequent in all jurisdictions? In all the jurisdictions except for Nunavut, there are more general civil cases.
 3. Has there been a significant growth pattern acorss different jurisdictions in the number of cases? The opposite is in fact correct. There was a growth trajectrory in almost all the jurisdcitions however in the last couple of years the numbers have gone down significantly. 
