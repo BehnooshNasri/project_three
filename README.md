@@ -169,7 +169,6 @@ The data was retrieved from government of Canada's open database.
 ### Resources
 
 - Govenrment of Canada website for overview of the judicial system (https://www.justice.gc.ca/eng/csj-sjc/just/08.html)
-- Wikipedia article for Court System of Canada (https://en.wikipedia.org/wiki/Court_system_of_Canada)
 
 ## Project Member
 
