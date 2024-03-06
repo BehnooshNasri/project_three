@@ -1,4 +1,4 @@
-# Project Three: Canadian and Certain Jurisdictions Civil Court Cases by Level of Court and Type of Case from 2005 to 2022
+# Project Three: Canadian and Certain Jurisdictions Civil Court Cases by Jurisdiction and Type of Case from 2005 to 2022
 
 ## Introduction
 
@@ -152,7 +152,7 @@ The data also shows that in every jurisdiction, there are less number of cases i
 
 ## Limitations
 
-One of the biggest limitations of this data analysis is the lack of data for all jurisdictions in Canada. There are no data for Manitoba, Newfoundland and Labrador and Quebec. The lack of data for Quebect is understandable as Quebec has its own unique judicial system.  
+One of the biggest limitations of this data analysis is the lack of data for all jurisdictions in Canada. There are no data for Manitoba, Newfoundland and Labrador and Quebec. 
 
 Another limitation on this data is the fact that the data does not provide further details on the jurisdiction of "Canada". It does not clarify if the data is for the federal court system civil cases (Federal Court, Federal Court of Appeal, Tax Court), or is the data actually an aggregate of all the provinces.
 
