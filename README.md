@@ -75,7 +75,7 @@ There are two seperate routes created to visualize the data. The first uese to g
 To achive this at first d3.json function is used to fetch the data from the API. Then the dropdown element with id of "yearSelect" is used.  Next, an array of unique years by mapping over the fetched data (data) and extracting the 'Year_Period' property of each entry is created. The Set object ensures uniqueness, and Array.from converts the set back to an array. Next, the options for the drop down created. It iterates over each unique year in the years array. For each year, it creates an <option> element, sets its value attribute to the year value, sets its textContent to the year value, and appends it to the dropdown list. It also sets the firstYear variable to the first year in the array. Later the event listener is added to retrieve the value of each year from the dropdown and a function is called to pass each selected year's value. Lastly the first year's data is fetched to display when the page loads. 
 
 Code snippet: 
-
+```
 // Fetch data and populate dropdown
 d3.json(url).then(data => {
     console.log('Data fetched:', data); // Log fetched data
@@ -100,7 +100,7 @@ d3.json(url).then(data => {
     });
     fetchDataForYear(firstYear);
 })
-
+```
 The next step a function is created to fetch the data from the API for each year to prapare to generate the charts. The last function is to generate the charts using plotly. For the full data visualization, a bar chart of all the jurisdictions, a bar chart of all the case types and a pie chart of the jurisdictions per year period are created. 
 
 
