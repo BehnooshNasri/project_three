@@ -115,7 +115,7 @@ For the jurisdiction visualization a bar chart is created to show each jurisdict
 
 #### Analysis of the Data by Year
 
-- Analyzing the the data aby year, it shows that not all jurisidictions have available data. The data shows that other than jurisdiction of Canada (unclear if federal data or aggergate of provinces), the top three provinces are Ontario then followed by alberta and British Columbia respectively. A visulaization of the data for the year period 2021/2022 is shown below: 
+Analyzing the the data aby year, it shows that not all jurisidictions have available data. The data shows that other than jurisdiction of Canada (unclear if federal data or aggergate of provinces), the top three provinces are Ontario then followed by alberta and British Columbia respectively. Visulaizations of the data for the year period 2021/2022 are shown below: 
 
 Data by jurisdcition for 2021/2022 (bar chart):
 
@@ -129,12 +129,34 @@ Data by jurisdcition for 2021/2022 (pie chart):
 
 ![Alt text](static/images/civil-cases-by-year-2021-2022-pie.png)
 
-2. What type of civil court cases (family or general civil) are more frequent in all jurisdictions? In all the jurisdictions except for Nunavut, there are more general civil cases.
-3. Has there been a significant growth pattern acorss different jurisdictions in the number of cases? The opposite is in fact correct. There was a growth trajectrory in almost all the jurisdcitions however in the last couple of years the numbers have gone down significantly. 
+#### Analysis of the Data by Jurisdiction
+
+The jurisdiction visualization gives us more details to each available jurisdictions cases. In almosy all jurisdictions, the number if general civil cases are higher than family civil cases. The only exception is Nunavut which has a higher rate of family civil cases than general civil cases. The margin of difference between the two case types are varied in each jurisdiction. 
+
+Visualization of Ontario, Nunavut and Canada are shown below: 
+
+Ontario: 
+
+![Alt text](static/images/ontario.png)
+
+Nunavut:
+
+![Alt text](static/images/nunavut.png)
+
+Canada:
+
+![Alt text](static/images/canada.png)
+
+
+The data also shows that in every jurisdiction, there are less number of cases in the last two year periods of teh available data (2020 to 2022). This suggests that the pandemic years affected the number of civil cases initiated in all jurisdictions. 
 
 ## Limitations
 
-TBD
+One of the biggest limitations of this data analysis is the lack of data for all jurisdictions in Canada. There are no data for Manitoba, Newfoundland and Labrador and Quebec. The lack of data for Quebect is understandable as Quebec has its own unique judicial system.  
+
+Another limitation on this data is the fact that the data does not provide further details on the jurisdiction of Canada. It does not clarify if the data is for the federal court system civil cases (Federal Court, Federal Court of Appeal, Tax Court), or is the data actually an aggregate of all the provinces.
+
+The data also does not provide us with the level of court in each case type. This has the potential of misrepresenting the data as a case that has been initiated at a superior court has the potential to go to another level of court (appeal, bankruptcy, commercial list, etc.). However the data does not specify how it has been collected to account for these type of cases. 
 
 ## Data and Resources
 
@@ -144,6 +166,10 @@ The data was retrieved from government of Canada's open database.
 
 - Civil court cases, by level of court and type of case, Canada and selected provinces and territories - Dataset (https://open.canada.ca/data/en/dataset/5641ad22-190a-4486-8c5d-3884328a51a5/resource/108a7554-fe40-4fba-951a-d06debb76bca)
 
+### Resources
+
+- Govenrment of Canada website for overview of the judicial system (https://www.justice.gc.ca/eng/csj-sjc/just/08.html)
+- Wikipedia article for Court System of Canada (https://en.wikipedia.org/wiki/Court_system_of_Canada)
 
 ## Project Member
 
