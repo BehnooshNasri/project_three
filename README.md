@@ -2,15 +2,15 @@
 
 ## Introduction
 
-This project aims to visualize the civil court cases that have been initiated in Canada and certain jurisdictions using the data gathered by the govenrment of Canada between the years 2005 to 2022. The purpose of the project is to compare the provincial and federal civil court cases through the years and compare jurisdictions. 
+This project aims to visualize the civil court cases that have been initiated in Canada and certain jurisdictions using the data gathered by the government of Canada between the years 2005 to 2022. The purpose of the project is to compare the civil court cases through the years and compare jurisdictions. 
 
-Civil court case is initiated when individuals or corporations disagree on a legal matter. A civil case may also arise if someone is injured or there is damage to property. Family law also includes a substanital amount of civil cases which may include divorce, seperation child custody, access and support, and other family issues. 
+Civil court case is initiated when individuals or corporations disagree on a legal matter. A civil case may also arise if someone is injured or there is damage to property. Family law also includes a substantial amount of civil cases which may include divorce, separation child custody, access and support, and other family issues. 
 
 The questions this projects is attempting to explore and visualize are: 
 
-1. Is there a certain jurisdiction that has more civil court cases? 1. Ontario 2. Alberta 3. BC
-2. What type of civil court cases (family or general civil) are more frequent in all jurisdictions? In all the jurisdictions except for Nunavut, there are more general civil cases.
-3. Has there been a significant growth pattern acorss different jurisdictions in the number of cases? The opposite is in fact correct. There was a growth trajectrory in almost all the jurisdcitions however in the last couple of years the numbers have gone down significantly. 
+1. Is there a certain jurisdiction that has more civil court cases? 
+2. What type of civil court cases (family or general civil) are more frequent in all jurisdictions? 
+3. Has there been a significant growth pattern across different jurisdictions in the number of cases? 
 
 ## Methodology
 
@@ -70,7 +70,7 @@ Code snippet:
 
 There are two seperate routes created to visualize the data. The first uese to group the data by year and visualize each juridiction and case type per year. 
 
-#### Full data by year
+#### Full Data by Year
 
 To achive this at first d3.json function is used to fetch the data from the API. Then the dropdown element with id of "yearSelect" is used.  Next, an array of unique years by mapping over the fetched data (data) and extracting the 'Year_Period' property of each entry is created. The Set object ensures uniqueness, and Array.from converts the set back to an array. Next, the options for the drop down created. It iterates over each unique year in the years array. For each year, it creates an <option> element, sets its value attribute to the year value, sets its textContent to the year value, and appends it to the dropdown list. It also sets the firstYear variable to the first year in the array. Later the event listener is added to retrieve the value of each year from the dropdown and a function is called to pass each selected year's value. Lastly the first year's data is fetched to display when the page loads. 
 
@@ -104,7 +104,7 @@ d3.json(url).then(data => {
 The next step a function is created to fetch the data from the API for each year to prapare to generate the charts. The last function is to generate the charts using plotly. For the full data visualization, a bar chart of all the jurisdictions, a bar chart of all the case types and a pie chart of the jurisdictions per year period are created. 
 
 
-#### Full data by jurisdiction
+#### Full data by Jurisdiction
 
 The creation of the dropdown and the functions to fetch the data for each jurisdiction is the same as the one by year. The only difference between the two is the variable "year" is replaced by the variable "place". 
 
@@ -115,9 +115,9 @@ For the jurisdiction visualization a bar chart is created to show each jurisdict
 
 #### Analysis of the Data by Year
 
-Analyzing the the data aby year, it shows that not all jurisidictions have available data. The data shows that other than jurisdiction of Canada (unclear if federal data or aggergate of provinces), the top three provinces are Ontario then followed by alberta and British Columbia respectively. Visulaizations of the data for the year period 2021/2022 are shown below: 
+Analyzing the the data aby year, it shows that not all jurisdictions have available data. The data shows that other than jurisdiction of Canada (unclear if federal data or aggergate of provinces), the top three provinces are Ontario then followed by alberta and British Columbia respectively. Visulaizations of the data for the year period 2021/2022 are shown below: 
 
-Data by jurisdcition for 2021/2022 (bar chart):
+Data by jurisdictions for 2021/2022 (bar chart):
 
 ![Alt text](static/images/civil-cases-by-year-2021-2022-jurisdiction.png)
 
@@ -125,7 +125,7 @@ Data by case type for 2021/2022 (bar chart):
 
 ![Alt text](static/images/civil-cases-by-year-2021-2022-case-type.png)
 
-Data by jurisdcition for 2021/2022 (pie chart):
+Data by jurisdictions for 2021/2022 (pie chart):
 
 ![Alt text](static/images/civil-cases-by-year-2021-2022-pie.png)
 
