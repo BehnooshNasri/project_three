@@ -4,7 +4,7 @@
 
 This project aims to visualize the civil court cases that have been initiated in Canada and certain jurisdictions using the data gathered by the government of Canada between the years 2005 to 2022. The purpose of the project is to compare the civil court cases through the years and compare jurisdictions. 
 
-Civil court case is initiated when individuals or corporations disagree on a legal matter. A civil case may also arise if someone is injured or there is damage to property. Family law also includes a substantial amount of civil cases which may include divorce, separation child custody, access and support, and other family issues. 
+Civil court case is initiated when individuals or corporations disagree on a legal matter. A civil case may also arise if someone is injured or there is damage to property. Family law also includes a substantial amount of civil cases which may include divorce, separation, child custody, access and support, and other family issues. 
 
 The questions this projects is attempting to explore and visualize are: 
 
