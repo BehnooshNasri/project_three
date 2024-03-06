@@ -16,11 +16,11 @@ The questions this projects is attempting to explore and visualize are:
 
 ### ETL 
 
-The data was published by Statistic Canada in CSV format. I used Jupyter Notebook to clean up the data and imported into a postgres SQL server using pgAdmin. 
+The data was published by Statistic Canada in CSV format. Jupyter Notebook is used to clean up the data and imported into a postgres SQL server using pgAdmin. 
 
 ### Flask
 
-I used SQLAlchemy to create the an API that holds the data from the SQL server. Then in order to query parameters I used the following code to filter the results. 
+SQLAlchemy is used to create the API that holds the data from the SQL server. Then in order to query parameters the following code is used to filter the results. 
 
 Code snippet: 
 
@@ -43,11 +43,11 @@ Code snippet:
  
 ### HTML 
 
-I created three HTML files: an index HTML file for the main route, and two HTML files, one for each remaining route. 
+There are three HTML files created: an index HTML file for the main route, and two HTML files, one for each visualization route. 
 
 #### index.html 
 
-I used Bootstrap for styling and creating the navigation bar on the index page.
+Bootstrap is used for styling and creating the navigation bar on the index page.
 
 Code snippet: 
 
@@ -68,11 +68,11 @@ Code snippet:
 
 ### JavaScript
 
-There are two seperate routes created to visualize the data. The first uese to group the data by year and visualize each juridiction and case type per year. 
+There are two seperate routes created to visualize the data. The first uese to group the data by year to visualize each juridiction and case type per year. The second uses the jurisdiction to group the data. 
 
 #### Full Data by Year
 
-To achive this at first d3.json function is used to fetch the data from the API. Then the dropdown element with id of "yearSelect" is used.  Next, an array of unique years by mapping over the fetched data (data) and extracting the 'Year_Period' property of each entry is created. The Set object ensures uniqueness, and Array.from converts the set back to an array. Next, the options for the drop down created. It iterates over each unique year in the years array. For each year, it creates an <option> element, sets its value attribute to the year value, sets its textContent to the year value, and appends it to the dropdown list. It also sets the firstYear variable to the first year in the array. Later the event listener is added to retrieve the value of each year from the dropdown and a function is called to pass each selected year's value. Lastly the first year's data is fetched to display when the page loads. 
+To achive this at first d3.json function is used to fetch the data from the API. Then the dropdown element with id of "yearSelect" is used.  Next, an array of unique years by mapping over the fetched data (data) and extracting the 'Year_Period' property of each entry is created. The Set object ensures uniqueness, and Array.from converts the set back to an array. Next, the options for the drop down are created. It iterates over each unique year in the years array. For each year, it creates an <option> element, sets its value attribute to the year value, sets its textContent to the year value, and appends it to the dropdown list. It also sets the firstYear variable to the first year in the array. Later the event listener is added to retrieve the value of each year from the dropdown and a function is called to pass each selected year's value. Lastly the first year's data is fetched to display when the page loads. 
 
 Code snippet: 
 ```
@@ -101,21 +101,21 @@ d3.json(url).then(data => {
     fetchDataForYear(firstYear);
 })
 ```
-The next step a function is created to fetch the data from the API for each year to prapare to generate the charts. The last function is to generate the charts using plotly. For the full data visualization, a bar chart of all the jurisdictions, a bar chart of all the case types and a pie chart of the jurisdictions per year period are created. 
+The next step a function is created to fetch the data from the API for each year to prapare to generate the charts. The last function is to generate the charts using Plotly. For the full data visualization, a bar chart of all the jurisdictions, a bar chart of all the case types and a pie chart of the jurisdictions per year period are created. 
 
 
 #### Full data by Jurisdiction
 
 The creation of the dropdown and the functions to fetch the data for each jurisdiction is the same as the one by year. The only difference between the two is the variable "year" is replaced by the variable "place". 
 
-For the jurisdiction visualization a bar chart is created to show each jurisdictions cases (by case type) through teh available years. 
+For the jurisdiction visualization a bar chart is created to show each jurisdictions cases (by case type) through the available years. 
 
 
 ## Analysis
 
 #### Analysis of the Data by Year
 
-Analyzing the the data aby year, it shows that not all jurisdictions have available data. The data shows that other than jurisdiction of Canada (unclear if federal data or aggergate of provinces), the top three provinces are Ontario then followed by alberta and British Columbia respectively. Visulaizations of the data for the year period 2021/2022 are shown below: 
+Analyzing the the data by year, shows that not all jurisdictions have available data. The data shows that other than jurisdiction of Canada (unclear if federal data or aggergate of provinces), the top three provinces are Ontario then followed by alberta and British Columbia respectively. Visulaizations of the data for the year period 2021/2022 as a sample are shown below: 
 
 Data by jurisdictions for 2021/2022 (bar chart):
 
@@ -131,7 +131,7 @@ Data by jurisdictions for 2021/2022 (pie chart):
 
 #### Analysis of the Data by Jurisdiction
 
-The jurisdiction visualization gives us more details to each available jurisdictions cases. In almosy all jurisdictions, the number if general civil cases are higher than family civil cases. The only exception is Nunavut which has a higher rate of family civil cases than general civil cases. The margin of difference between the two case types are varied in each jurisdiction. 
+The jurisdiction visualization gives us more details to each available jurisdiction's cases. In almosy all jurisdictions, the number if general civil cases are higher than family civil cases. The only exception is Nunavut which has a higher rate of family civil cases than general civil cases. The margin of difference between the two case types are varied in each jurisdiction. 
 
 Visualization of Ontario, Nunavut and Canada are shown below: 
 
@@ -148,15 +148,15 @@ Canada:
 ![Alt text](static/images/canada.png)
 
 
-The data also shows that in every jurisdiction, there are less number of cases in the last two year periods of teh available data (2020 to 2022). This suggests that the pandemic years affected the number of civil cases initiated in all jurisdictions. 
+The data also shows that in every jurisdiction, there are less number of cases in the last two year periods of the available data (2020 to 2022). This suggests that the pandemic years affected the number of civil cases initiated in all jurisdictions. 
 
 ## Limitations
 
 One of the biggest limitations of this data analysis is the lack of data for all jurisdictions in Canada. There are no data for Manitoba, Newfoundland and Labrador and Quebec. The lack of data for Quebect is understandable as Quebec has its own unique judicial system.  
 
-Another limitation on this data is the fact that the data does not provide further details on the jurisdiction of Canada. It does not clarify if the data is for the federal court system civil cases (Federal Court, Federal Court of Appeal, Tax Court), or is the data actually an aggregate of all the provinces.
+Another limitation on this data is the fact that the data does not provide further details on the jurisdiction of "Canada". It does not clarify if the data is for the federal court system civil cases (Federal Court, Federal Court of Appeal, Tax Court), or is the data actually an aggregate of all the provinces.
 
-The data also does not provide us with the level of court in each case type. This has the potential of misrepresenting the data as a case that has been initiated at a superior court has the potential to go to another level of court (appeal, bankruptcy, commercial list, etc.). However the data does not specify how it has been collected to account for these type of cases. 
+The data also does not provide us with the level of court in each case type. This has the potential of misrepresenting the data as a case that has been initiated at a superior court has the potential to go to another level of court (Appeal, Bankruptcy, Commercial List, etc.). However the data does not specify how it has been collected to account for these type of cases. 
 
 ## Data and Resources
 
